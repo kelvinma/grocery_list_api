@@ -11,38 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105220525) do
+ActiveRecord::Schema.define(version: 20151106194919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "grocery_lists", force: :cascade do |t|
-  end
-
   create_table "ingredients", force: :cascade do |t|
-    t.string   "name"
-    t.string   "type"
-    t.boolean  "is_vegetarian"
-    t.boolean  "is_vegan"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "meal_plans", force: :cascade do |t|
-    t.date "week_of"
+    t.string  "name"
+    t.string  "type"
+    t.boolean "is_vegetarian"
+    t.boolean "is_vegan"
   end
 
   create_table "recipes", force: :cascade do |t|
-    t.string  "name"
-    t.string  "which_meal"
-    t.string  "style"
-    t.string  "difficulty"
-    t.integer "ingredient_id"
-    t.integer "meal_plan_id"
+    t.string "name"
+    t.string "which_meal"
+    t.string "style"
+    t.text   "instructions"
   end
-
-  add_index "recipes", ["ingredient_id"], name: "index_recipes_on_ingredient_id", using: :btree
-  add_index "recipes", ["meal_plan_id"], name: "index_recipes_on_meal_plan_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           null: false
@@ -55,6 +41,8 @@ ActiveRecord::Schema.define(version: 20151105220525) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["token"], name: "index_users_on_token", unique: true, using: :btree
 
-  add_foreign_key "recipes", "ingredients"
-  add_foreign_key "recipes", "meal_plans"
+  create_table "weekly_menus", force: :cascade do |t|
+    t.date "week_of"
+  end
+
 end

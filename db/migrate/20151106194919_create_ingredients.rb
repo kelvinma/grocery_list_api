@@ -5,7 +5,6 @@ class CreateIngredients < ActiveRecord::Migration
       t.string :type
       t.boolean :is_vegetarian
       t.boolean :is_vegan
-      t.timestamps null: false
     end
   end
 end
