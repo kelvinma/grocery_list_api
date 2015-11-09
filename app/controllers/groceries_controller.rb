@@ -16,7 +16,7 @@ class GroceriesController < OpenReadController
 
   # POST /groceries
   def create
-    @grocery = current_user.grocery.new(grocery_params)
+    @grocery = current_user.groceries.new(grocery_params)
 
     if @grocery.save
       render json: @grocery, status: :created, location: @grocery
@@ -27,7 +27,7 @@ class GroceriesController < OpenReadController
 
   # PATCH /groceries/1
   def update
-    if @grocery.update(recipe_ingredient_params)
+    if @grocery.update(grocery_params)
       head :no_content
     else
       render json: @grocery.errors, status: :unprocessable_entity
@@ -42,11 +42,11 @@ class GroceriesController < OpenReadController
   end
 
   def set_grocery
-    @grocery = current_user.grocery.find(params[:id])
+    @grocery = current_user.groceries.find(params[:id])
   end
 
   def grocery_params
-    params.require(:grocery).permit(:ingredient_id, :weekly_menu_id)
+    params.require(:grocery).permit(:ingredient_id, :weekly_menu_id, :amount)
   end
 
   private :set_grocery, :grocery_params

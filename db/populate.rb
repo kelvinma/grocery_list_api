@@ -1,5 +1,32 @@
 RecipeIngredient.delete_all
+Ingredient.delete_all
 Recipe.delete_all
+
+Ingredient.create!([
+  { name: 'Walnuts', type_of: 'protein', is_vegetarian: true, is_vegan: true },
+  { name: 'Almonds', type_of: 'protein', is_vegetarian: true, is_vegan: true },
+  { name: 'Apple', type_of: 'fruit', is_vegetarian: true, is_vegan: true },
+  { name: 'Cinnamon', type_of: 'seasoning', is_vegetarian: true, is_vegan: true },
+  { name: 'Dates', type_of: 'seasoning', is_vegetarian: true, is_vegan: true },
+  { name: 'Brown Rice', type_of: 'grain/starch', is_vegetarian: true, is_vegan: true },
+  { name: 'Tempeh', type_of: 'protein', is_vegetarian: true, is_vegan: true },
+  { name: 'Baby Bok Choy', type_of: 'vegetable', is_vegetarian: true, is_vegan: true },
+  { name: 'Red Pepper', type_of: 'vegetable', is_vegetarian: true, is_vegan: true },
+  { name: 'Fresh Ginger', type_of: 'seasoning', is_vegetarian: true, is_vegan: true },
+  { name: 'Soy Sauce', type_of: 'seasoning', is_vegetarian: true, is_vegan: true },
+  { name: 'Olive Oil', type_of: 'seasoning', is_vegetarian: true, is_vegan: true },
+  { name: 'Apple Cider Vinegar', type_of: 'seasoning', is_vegetarian: true, is_vegan: true},
+  { name: 'Garlic', type_of: 'seasoning', is_vegetarian: true, is_vegan: true },
+  { name: 'Water', type_of: 'seasoning', is_vegetarian: true, is_vegan: true },
+  { name: 'Quinoa', type_of: 'grain/starch', is_vegetarian: true, is_vegan: true },
+  { name: 'Black Beans', type_of: 'protein', is_vegetarian: true, is_vegan: true },
+  { name: 'Romaine Lettuce', type_of: 'vegetable', is_vegetarian: true, is_vegan: true },
+  { name: 'Tomato', type_of: 'vegetable', is_vegetarian: true, is_vegan: true },
+  { name: 'Chili Powder', type_of: 'seasoning', is_vegetarian: true, is_vegan: true},
+  { name: 'Cumin', type_of: 'seasoning', is_vegetarian: true, is_vegan: true },
+  { name: 'Lime', type_of: 'seasoning', is_vegetarian: true, is_vegan: true },
+  { name: 'Yellow Corn', type_of: 'vegetable', is_vegetarian: true, is_vegan: true },
+])
 
 Recipe.create!([
   { name: 'Mexican Quinoa Bowl', which_meal: 'Lunch, Dinner', style: 'Mexican',
