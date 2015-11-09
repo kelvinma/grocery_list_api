@@ -1,4 +1,6 @@
 class Ingredient < ActiveRecord::Base
-  belongs_to :recipe_ingredient
-  belongs_to :grocery
+  has_many :recipe_ingredients
+  has_many :groceries
+  has_many :recipes, through: :recipe_ingredients
+  has_many :weekly_menus, through: :groceries
 end
