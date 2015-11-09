@@ -1,4 +1,4 @@
-class MealsController < ApplicationController
+class MealsController < OpenReadController
   before_action :set_meal, only: [:update, :destroy]
 
  def index

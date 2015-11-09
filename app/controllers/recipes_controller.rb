@@ -4,7 +4,7 @@ class RecipesController < OpenReadController
  def index
     @recipes = Recipe.all
 
-    render json: @recieps
+    render json: @recipes
   end
 
   # GET /recipes/1

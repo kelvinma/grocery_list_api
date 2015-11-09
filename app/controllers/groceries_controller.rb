@@ -1,5 +1,5 @@
 class GroceriesController < OpenReadController
-    before_action :set_grocery, only: [:update, :destroy]
+   before_action :set_grocery, only: [:update, :destroy]
 
  def index
     @groceries = Grocery.all
@@ -41,7 +41,7 @@ class GroceriesController < OpenReadController
     head :no_content
   end
 
-  def set_recipe
+  def set_grocery
     @grocery = current_user.grocery.find(params[:id])
   end
 
