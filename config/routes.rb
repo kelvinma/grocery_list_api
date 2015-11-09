@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   post '/register' => 'auth#register'
   # patch '/confirm' => 'auth#confirm'
   post '/login' => 'auth#login'
@@ -11,4 +12,10 @@ Rails.application.routes.draw do
   resources :ingredients, except: [:new, :edit]
 
   resources :weekly_menus, except: [:new, :edit]
+
+  resources :meals, except: [:new, :edit]
+
+  resources :recipe_ingredients, except: [:new, :edit]
+
+  resources :groceries, except: [:new, :edit]
 end
