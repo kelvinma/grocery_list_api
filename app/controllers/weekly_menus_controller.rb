@@ -7,16 +7,16 @@ def index
     render json: @weeklymenus
   end
 
-  # GET /books/1
+  # GET /weekly_menus/1
   def show
     @weeklymenu = WeeklyMenu.find(params[:id])
 
     render json: @weeklymenu
   end
 
-  # POST /weeklymenus
+  # POST /weekly_menus
   def create
-    @weeklymenu = current_user.weeklymenus.new(weeklymenu_params)
+    @weeklymenu = current_user.weekly_menus.new(weeklymenu_params)
 
     if @weeklymenu.save
       render json: @weeklymenu, status: :created, location: @weeklymenu
@@ -25,7 +25,7 @@ def index
     end
   end
 
-  # PATCH /weeklymenus/1
+  # PATCH /weekly_menus/1
   def update
     if @weeklymenu.update(weeklymenu_params)
       head :no_content
@@ -34,7 +34,7 @@ def index
     end
   end
 
-  # DELETE /weeklymenus/1
+  # DELETE /weekly_menus/1
   def destroy
     @weeklymenu.destroy
 
@@ -42,12 +42,12 @@ def index
   end
 
   def set_weeklymenu
-    @weeklymenu = current_user.weeklymenus.find(params[:id])
+    @weeklymenu = current_user.weekly_menus.find(params[:id])
   end
 
   def weeklymenu_params
-    params.require(:weeklymenu).permit(:week_of)
+    params.require(:weekly_menu).permit(:week_of)
   end
 
-  private :set_weeklymenu, :book_params
+  private :set_weeklymenu, :weeklymenu_params
 end

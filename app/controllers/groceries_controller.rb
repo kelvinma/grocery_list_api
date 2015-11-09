@@ -25,7 +25,7 @@ class GroceriesController < OpenReadController
     end
   end
 
-  # PATCH /grocery/1
+  # PATCH /groceries/1
   def update
     if @grocery.update(recipe_ingredient_params)
       head :no_content
@@ -34,7 +34,7 @@ class GroceriesController < OpenReadController
     end
   end
 
-  # DELETE /grocery/1
+  # DELETE /groceries/1
   def destroy
     @grocery.destroy
 
