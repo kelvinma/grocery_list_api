@@ -1,4 +1,6 @@
-class RecipesController < ApplicationController
+class RecipesController < OpenReadController
+    before_action :set_recipe, only: [:update, :destroy]
+
  def index
     @recipes = Recipe.all
 

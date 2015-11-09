@@ -1,4 +1,6 @@
-class IngredientsController < ApplicationController
+class IngredientsController < OpenReadController
+before_action :set_ingredient, only: [:update, :destroy]
+
 def index
     @ingredients = Ingredient.all
 

@@ -1,4 +1,6 @@
-class WeeklyMenusController < ApplicationController
+class WeeklyMenusController < OpenReadController
+    before_action :set_weekly_menu, only: [:update, :destroy]
+
 def index
     @weeklymenus = WeeklyMenu.all
 
