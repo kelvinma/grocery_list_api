@@ -16,7 +16,7 @@ class RecipesController < OpenReadController
 
   # POST /recipes
   def create
-    @recipe = current_user.recipes.new(recipe_params)
+    @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
       render json: @recipe, status: :created, location: @recipe
