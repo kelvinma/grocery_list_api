@@ -1,8 +1,8 @@
 class WeeklyMenusController < OpenReadController
-    before_action :set_weekly_menu, only: [:update, :destroy]
+    before_action :set_weeklymenu, only: [:update, :destroy]
 
   def index
-    @weeklymenus = WeeklyMenu.where(user_id: current_user)
+    @weeklymenus = WeeklyMenu.where(user_id: current_user.id)
 
     render json: @weeklymenus
   end
