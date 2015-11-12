@@ -1,5 +1,5 @@
 class MealSerializer < ActiveModel::Serializer
-  attributes :id, :recipe_name, :recipe_style, :recipe_which_meal
+  attributes :id, :recipe_id, :recipe_name, :recipe_style, :recipe_which_meal
 
   def recipe_name
     object.recipe.name

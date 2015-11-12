@@ -1,5 +1,5 @@
 class MealsController < OpenReadController
-  before_action :set_meal, only: [:update, :destroy]
+  before_action :set_meals, only: [:update, :destroy]
 
  def index
     @meals = Meal.all
@@ -7,7 +7,7 @@ class MealsController < OpenReadController
     render json: @meals
   end
 
-  # GET /meal/1
+  # GET /meals/1
   def show
     @meal = Meal.find(params[:id])
 
@@ -16,7 +16,7 @@ class MealsController < OpenReadController
 
   # POST /meals
   def create
-    @meal = current_user.meal.new(meal_params)
+    @meal = current_user.meals.new(meal_params)
 
     if @meal.save
       render json: @meal, status: :created, location: @meal
@@ -25,7 +25,7 @@ class MealsController < OpenReadController
     end
   end
 
-  # PATCH /meal/1
+  # PATCH /meals/1
   def update
     if @meal.update(meal_params)
       head :no_content
@@ -34,20 +34,20 @@ class MealsController < OpenReadController
     end
   end
 
-  # DELETE /meal/1
+  # DELETE /meals/1
   def destroy
     @meal.destroy
 
     head :no_content
   end
 
-  def set_meal
-    @meal = current_user.meal.find(params[:id])
+  def set_meals
+    @meal = current_user.meals.find(params[:id])
   end
 
   def meal_params
     params.require(:meal).permit(:recipe_id, :weekly_menu_id)
   end
 
-  private :set_meal, :meal_params
+  private :set_meals, :meal_params
 end
