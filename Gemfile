@@ -19,7 +19,9 @@ gem 'pg'
 gem 'bcrypt', '~> 3.1.7'
 
 # Help with JSON serialization
-gem 'active_model_serializers', github: "rails-api/active_model_serializers"
+gem 'active_model_serializers'
+
+# , github: 'rails-api/active_model_serializers'
 
 group :development do
   # Use pry over irb for rails console
