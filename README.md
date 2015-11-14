@@ -1,9 +1,9 @@
 # Eat It! - Your Custom Meal Plan
 
-* https://github.com/kelvinma/grocery_list_frontend/tree/development "Client-side GitHub Repo"
-* https://github.com/kelvinma/grocery_list_api/tree/development "Server-side GitHub Repo"
+* (https://github.com/kelvinma/grocery_list_frontend/tree/development "Client-side GitHub Repo")
+* (https://github.com/kelvinma/grocery_list_api/tree/development "Server-side GitHub Repo")
 
-* http://kelvinma.github.io/grocery_list_frontend/ "Live Application"
+* (http://kelvinma.github.io/grocery_list_frontend/ "Live Application")
 
 ## Introduction
 
