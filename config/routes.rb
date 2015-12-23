@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  get '/search/:q' => 'search#index'
+  get '/search' => 'search#index'
   post '/register' => 'auth#register'
   # patch '/confirm' => 'auth#confirm'
   post '/login' => 'auth#login'

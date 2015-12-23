@@ -23,6 +23,8 @@ gem 'active_model_serializers'
 
 # , github: 'rails-api/active_model_serializers'
 
+gem 'httparty'
+
 group :development do
   # Use pry over irb for rails console
   gem 'pry-rails'
